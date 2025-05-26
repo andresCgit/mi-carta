@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
+body {
+  overflow-x: hidden;
+}
+
 
 .side.two {
   box-sizing: border-box;
@@ -27,27 +31,22 @@
 }
 
 /* Ajustes para pantallas muy pequeñas */
-@media (max-width: 360px) {
-  .side.two {
-    padding: 1rem;
-  }
-  .side.two h2 {
-    font-size: 1.5rem;
-  }
-  .side.two p {
-    font-size: 0.9rem;
-  }
+@media (max-width: 480px) {
+  .side.two h2 { font-size: 1.4rem; }
+  .side.two p  { font-size: 0.9rem; }
+  .heart       { width: 120px; height: 120px; top: 30px; }  
+  /* y cualquier otro ajuste que necesites */
 }
 
 #card {
-   height:500px;
-   width:800px;
-   margin:5em auto;
-   position: fixed;
-  top: -15px;
-   left: 25%;
-   display:flex;
-   visibility:hidden;
+  box-sizing: border-box;
+  width: 90%;         /* ocupa el 90% del viewport */
+  max-width: 800px;   /* pero nunca más de 800px */
+  margin: 2rem auto;  /* centrado vertical u horizontal según necesites */
+  position: relative; /* antes era fixed, ya no */
+  height: auto;       /* que su altura dependa del contenido */
+  visibility: visible;/* si quieres mostrarlo */
+  display: block;     /* o flex si necesitas */
 }
 #card h2 {
    font-size:3em;
@@ -64,11 +63,12 @@
 
 
 .side {
-   background:#eee;
-   height:550px;
-   width:400px;
-/*    border:1px solid red; */
-   padding:10px;
+  box-sizing: border-box;
+  width: 100%;         /* antes 400px */
+  max-width: 400px;    /* para no crecer de más en desktop */
+  height: auto;        /* antes era 550px */
+  padding: 10px;
+  margin: 0 auto;      /* centrado en su contenedor */
 }
 .side.one {
    width:320px;
@@ -91,9 +91,11 @@ body {
  }
  
  .valentines-day {
-   position: relative;
-   cursor: pointer;
- }
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  perspective: 1000px;  /* para que los giros 3D se vean bien */
+}
  
  .envelope {
    position: relative;
