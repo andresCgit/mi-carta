@@ -69,8 +69,9 @@ body {
     left: 5px !important;
   }
   #card {
-    margin: 1rem auto !important;
-    padding: 0.5rem !important;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
   }
   .side {
     max-width: 98vw !important;
@@ -86,4 +87,12 @@ body {
 @media (max-width: 400px) {
   .side.two h2 { font-size: 1.1rem !important; }
   .side.two p { font-size: 0.8rem !important; }
+}
+
+#card, .side.two {
+  border-top: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.side.two::before, .side.two::after {
+  display: none !important;
 }
