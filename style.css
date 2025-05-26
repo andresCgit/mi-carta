@@ -1,5 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
+
+.side.two {
+  box-sizing: border-box;
+  max-width: 600px;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff5f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-family: 'Sacramento', cursive;
+}
+
+.side.two h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: #c2185b;
+}
+
+.side.two p {
+  line-height: 1.5;
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .side.two {
+    padding: 1rem;
+  }
+  .side.two h2 {
+    font-size: 1.5rem;
+  }
+  .side.two p {
+    font-size: 0.9rem;
+  }
+}
+
 #card {
    height:500px;
    width:800px;
