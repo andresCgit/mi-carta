@@ -2,210 +2,88 @@
 
 body {
   overflow-x: hidden;
-}
-
-
-.side.two {
-  box-sizing: border-box;
-  max-width: 600px;
-  width: 90%;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #fff5f8;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   font-family: 'Sacramento', cursive;
+  background-color: #f1e3d3;
 }
 
-.side.two h2 {
-  margin-top: 0;
-  font-size: 1.75rem;
-  color: #c2185b;
-}
-
-.side.two p {
-  line-height: 1.5;
-  margin: 1rem 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-/* Ajustes para pantallas muy pequeñas */
-@media (max-width: 480px) {
-  .side.two h2 { font-size: 1.4rem; }
-  .side.two p  { font-size: 0.9rem; }
-  .heart       { width: 120px; height: 120px; top: 30px; }  
-  /* y cualquier otro ajuste que necesites */
-}
-
-#card {
-  box-sizing: border-box;
-  width: 90%;         /* ocupa el 90% del viewport */
-  max-width: 800px;   /* pero nunca más de 800px */
-  margin: 2rem auto;  /* centrado vertical u horizontal según necesites */
-  position: relative; /* antes era fixed, ya no */
-  height: auto;       /* que su altura dependa del contenido */
-  visibility: visible;/* si quieres mostrarlo */
-  display: block;     /* o flex si necesitas */
-}
-#card h2 {
-   font-size:3em;
-   margin:0;
-   color:pink;
-   text-align: center;
-}
-#card p {
-   font-size: 1.5em;
-   text-align: justify;
-   padding-left: 30px; /* Espacio en blanco a la izquierda */
-   padding-right: 30px; /* Espacio en blanco a la derecha */
-}
-
-
-.side {
-  box-sizing: border-box;
-  width: 100%;         /* antes 400px */
-  max-width: 400px;    /* para no crecer de más en desktop */
-  height: auto;        /* antes era 550px */
-  padding: 10px;
-  margin: 0 auto;      /* centrado en su contenedor */
-}
-.side.one {
-   width:320px;
-   transform:skew(10deg,20deg);
-   background:linear-gradient(90deg, #fff, #fff 40%, #ddd);
-}
-.side.two {
-   transform:skew(10deg,-15deg);
-   background:linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
-}
-
-body {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 100vh;
-   font-family: 'Sacramento', cursive;
-   background-color: #f1e3d3;
-   overflow: hidden;
- }
- 
- .valentines-day {
+.valentines-day {
   width: 90%;
   max-width: 800px;
   margin: 0 auto;
-  perspective: 1000px;  /* para que los giros 3D se vean bien */
+  perspective: 1000px;
 }
- 
- .envelope {
-   position: relative;
-   filter: drop-shadow(0 0 25px rgba(0,0,0,.3));
- }
- 
- .envelope:before {
-   content:"";
-   position: absolute;
-   width:254px;
-   height:254px;
-   background-color: #ff9494;
-   transform: rotate(-45deg);
-   border-radius: 0 15px 0 0;
-   left:-37px;
-   top:-82px;
- }
- 
- .envelope:after {
-   content:"";
-   position: absolute;
-   background-color: #ff9494;
-   width:360px;
-   height:225px;
-   left:-90px;
-   top:45px;
- }
- 
- .heart {
-   position: relative;
-   background-color: #e01911;
-   display: inline-block;
-   height: 180px;
-   top:50px;
-   left:0;
-   transform: rotate(-45deg);
-   width:180px;
-   filter: drop-shadow(0 -10px 25px rgba(0,0,0,.3));
-   transition: .5s;
- }
-   
- .heart:before, .heart:after {
-   content:"";
-   background-color: #e01911;
-   border-radius:50%;
-   height: 180px;
-   width: 180px;
-   position: absolute;
-   }
-   
- .heart:before {
-   top:-100px;
-   left:0;}
-   
- .heart:after {
-   left:100px;
-   top:0;}
- 
- .front {
-   position: absolute;
-   width:0;
-   height:0;
-   border-right: 190px solid #fbd2d2;
-   border-top: 113px solid transparent;
-   border-bottom: 113px solid transparent;
-   top:44px;
-   left:80px;
-   z-index:4;
- }
- 
- .front:before {
-   content:"";
-   position: absolute;
-   width:0;
-   height:0;
-   border-left: 190px solid #fbd2d2;
-   border-top: 113px solid transparent;
-   border-bottom: 113px solid transparent;
-   top:-113px;
-   left:-170px;
- }
- 
- .front:after {
-   width:0;
-   height:0;
-   position: absolute;
-   content:"";
-   border-bottom: 150px solid #fce7e9;
-   border-right:180px solid transparent;
-   border-left: 180px solid transparent;
-   top:-36px;
-   left:-170px;
- }
- 
- .text {
-   position: absolute;
-   font-family: arial;
-   letter-spacing:5px;
-   text-align: center;
-   color: white;
-   z-index:2;
-   top:80px;
-   left:15px;
-   transition: .5s;
- }
- 
- .valentines-day:hover .heart {
-   transform: translateY(-50px) rotate(-45deg);
- }
- 
- .valentines-day:hover .text {
-   transform: translateY(-50px);
- }
+
+/* ...[todo tu CSS existente de .envelope, .heart, .front, .side, etc.]... */
+
+/* Responsive fixes abajo */
+@media (max-width: 600px) {
+  .envelope:before,
+  .envelope:after {
+    width: 150px !important;
+    height: 150px !important;
+    left: -25px !important;
+    top: -48px !important;
+  }
+  .envelope:after {
+    width: 200px !important;
+    height: 130px !important;
+    left: -50px !important;
+    top: 20px !important;
+  }
+  .heart, .heart:before, .heart:after {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .heart {
+    top: 20px !important;
+  }
+  .front {
+    border-right: 100px solid #fbd2d2 !important;
+    border-top: 60px solid transparent !important;
+    border-bottom: 60px solid transparent !important;
+    top: 24px !important;
+    left: 40px !important;
+  }
+  .front:before {
+    border-left: 100px solid #fbd2d2 !important;
+    border-top: 60px solid transparent !important;
+    border-bottom: 60px solid transparent !important;
+    top: -60px !important;
+    left: -90px !important;
+  }
+  .front:after {
+    border-bottom: 80px solid #fce7e9 !important;
+    border-right: 90px solid transparent !important;
+    border-left: 90px solid transparent !important;
+    top: -18px !important;
+    left: -90px !important;
+  }
+  .text {
+    top: 40px !important;
+    font-size: 1em !important;
+    left: 5px !important;
+  }
+  #card {
+    margin: 1rem auto !important;
+    padding: 0.5rem !important;
+  }
+  .side {
+    max-width: 98vw !important;
+    width: 100% !important;
+    padding: 4vw !important;
+    margin: 0 !important;
+  }
+  .side.one, .side.two {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .side.two h2 { font-size: 1.1rem !important; }
+  .side.two p { font-size: 0.8rem !important; }
+}
